@@ -1,45 +1,65 @@
 import React from "react";
+import ChildComponent from "./ChildComponents";
 
 class MyComponent extends React.Component {
   state = {
-    name: "Huy",
-    age: 21,
+    // name: "Huy",
+    // age: 21,
+    firstName: "",
+    lastName: "",
   };
 
   /*
    De render thi co ham render() cu phap JSX -> ham return 1 khoi code html, su dung js trong ham,...
    */
 
-  handleOnChangeName = (event) => {
+  handleOnChangeFirstName = (event) => {
     this.setState({
-      name: event.target.value,
+      firstName: event.target.value,
     });
   };
 
-  handleOnClickBtn = () => {
-    alert("Thanks for your clicked me!");
+  handleOnChangeLastName = (event) => {
+    this.setState({
+      lastName: event.target.value,
+    });
+  };
+
+  handleSubmit = (event) => {
+    // Ham giup k load lai trang
+    event.preventDefault();
+    console.log(">>>Check data: ", this.state);
   };
 
   render() {
+    console.log(">>>Call render: ", this.state);
     return (
       <>
-        {/* su ky dieu cua state */}
-        <div className="test">
-          My name is
+        <form action="/action_page.php">
+          <label for="fname">First name:</label>
+          <br />
           <input
-            value={this.state.name}
             type="text"
-            onChange={(event) => this.handleOnChangeName(event)}
+            value={this.state.firstName}
+            onChange={(event) => this.handleOnChangeFirstName(event)}
           />
-          ! I'm {this.state.age} years old!
-        </div>
-        <div className="test1">Pham Dang {this.state.name}!</div>
-        <div className="test2">
-          {this.state.name}B2014836@student.ctu.edu.vn
-        </div>
-        <div className="test3">
-          <button onClick={() => this.handleOnClickBtn()}>Click me</button>
-        </div>
+          <br />
+          <label for="lname">Last name:</label>
+          <br />
+          <input
+            type="text"
+            value={this.state.lastName}
+            onChange={(event) => this.handleOnChangeLastName(event)}
+          />
+          <br />
+          <br />
+          <input
+            type="submit"
+            value="Submit"
+            onClick={(event) => this.handleSubmit(event)}
+          />
+        </form>
+        <ChildComponent name={"Pham Dang Huy"} age={" 21"} />
       </>
     );
   }
