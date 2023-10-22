@@ -28,6 +28,23 @@ class MyComponent extends React.Component {
     });
   };
 
+  componentDidUpdate(prevProps, prevState) {
+    // prevState la state qua khu
+    // this.state la state hien tai sau khi update
+    console.log(
+      ">>> run didupdate: ",
+      "prevState: ",
+      prevState,
+      "current state: ",
+      this.state
+    );
+  }
+
+  // Noi de goi API
+  componentDidMount() {
+    console.log(">>> run component did mount");
+  }
+
   /*
    De render thi co ham render() cu phap JSX -> ham return 1 khoi code html, su dung js trong ham,...
    */

@@ -1,4 +1,5 @@
 import React from "react";
+import "./demo.scss";
 
 //  Class Component
 class ChildComponent extends React.Component {
@@ -27,7 +28,9 @@ class ChildComponent extends React.Component {
       <>
         {showJobs === false ? (
           <div>
-            <button onClick={() => this.handleShowHide()}>Show</button>
+            <button className="btn-show" onClick={() => this.handleShowHide()}>
+              Show
+            </button>
           </div>
         ) : (
           <>
@@ -45,7 +48,12 @@ class ChildComponent extends React.Component {
               })}
             </div>
             <div>
-              <button onClick={() => this.handleShowHide()}>Hide</button>
+              <button
+                className="btn-show"
+                onClick={() => this.handleShowHide()}
+              >
+                Hide
+              </button>
             </div>
           </>
         )}
