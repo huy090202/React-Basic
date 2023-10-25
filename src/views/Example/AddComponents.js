@@ -5,6 +5,7 @@ class AddComponents extends React.Component {
     title: "",
     salary: "",
   };
+
   handleOnChangeTitle = (event) => {
     this.setState({
       title: event.target.value,
@@ -20,12 +21,14 @@ class AddComponents extends React.Component {
   handleSubmit = (event) => {
     // Ham giup k load lai trang
     event.preventDefault();
+
     if (!this.state.title || !this.state.salary) {
       alert("Missing requied params");
       return;
     }
 
     console.log(">>>Check data: ", this.state);
+
     this.props.addNewJob({
       id: Math.floor(Math.random() * 1000),
       title: this.state.title,
@@ -38,6 +41,7 @@ class AddComponents extends React.Component {
       salary: "",
     });
   };
+
   render() {
     return (
       <>

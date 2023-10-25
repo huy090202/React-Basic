@@ -17,6 +17,7 @@ class AddTodo extends React.Component {
       toast.error(`Missing title's Todo!`);
       return;
     }
+
     let todo = {
       id: Math.floor(Math.random() * 1000),
       title: this.state.title,
@@ -28,6 +29,7 @@ class AddTodo extends React.Component {
 
   render() {
     let { title } = this.state;
+
     return (
       <div className="add-todo">
         <input
