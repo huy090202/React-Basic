@@ -1,6 +1,8 @@
 import React from "react";
 import { withRouter } from "react-router";
 import Color from "../HOC/Color";
+import Images from "../../assets/images/PHẠM ĐANG HUY.png";
+import "./demo.scss";
 
 class Home extends React.Component {
   componentDidMount() {
@@ -12,7 +14,14 @@ class Home extends React.Component {
   }
 
   render() {
-    return <div>Hello world from HomePage with Huy</div>;
+    return (
+      <>
+        <div>Hello world from HomePage with Huy</div>
+        <div>
+          <img className="img-test" src={Images} />
+        </div>
+      </>
+    );
   }
 }
 
