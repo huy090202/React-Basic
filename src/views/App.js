@@ -4,6 +4,8 @@ import MyComponent from "./Example/MyComponents";
 import ListTodo from "./Todos/ListTodo";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import ListUsers from "./Users/ListUsers";
+import DetailUser from "./Users/DetailUser";
 
 import Nav from "./Nav/Nav";
 import Home from "./Example/Home";
@@ -25,8 +27,14 @@ function App() {
             <Route path="/todo">
               <ListTodo />
             </Route>
-            <Route path="/">
+            <Route path="/about">
               <MyComponent />
+            </Route>
+            <Route path="/users" exact>
+              <ListUsers />
+            </Route>
+            <Route path="/users/:id">
+              <DetailUser />
             </Route>
           </Switch>
         </header>
